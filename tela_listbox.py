@@ -5,8 +5,15 @@ from tkinter import *
 
 # ==================== Funções ====================
 def enviar():
+
+    comidas = []
+
+    for i in listbox.curselection():
+        comidas.insert( i, listbox.get(i) )
+
     print ('Você pediu: ')
-    print (listbox.get ( listbox.curselection() ) )
+    for i in comidas:
+        print (i)
 
 def adicionar():
     listbox.insert( listbox.size(), caixa_entrada.get() )
@@ -26,7 +33,7 @@ listbox = Listbox(tela,
     bg    = '#f7ffde',
     font  = ('Constantia', 35),
     width = 12,
-    
+    selectmode = MULTIPLE
 )
 
 listbox.insert(1, 'Pizza')
