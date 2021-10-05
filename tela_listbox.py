@@ -20,7 +20,9 @@ def adicionar():
     listbox.config( height = listbox.size() )
 
 def deletar():
-    listbox.delete ( listbox.curselection() )
+    for i in reversed( listbox.curselection() ):
+        listbox.delete(i)
+
     listbox.config( height = listbox.size() )
 # ==================== Funções ====================
 
