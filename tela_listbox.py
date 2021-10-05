@@ -7,6 +7,9 @@ from tkinter import *
 def enviar():
     print ('Você pediu: ')
     print (listbox.get ( listbox.curselection() ) )
+
+def adicionar():
+    listbox.insert( listbox.size(), caixa_entrada.get() )
 # ==================== Funções ====================
 
 
@@ -38,6 +41,11 @@ botao_enviar = Button (tela,
     command = enviar
 )
 
+botao_adicionar = Button (tela,
+    text    = 'Adicionar',
+    command = adicionar
+)
+
 # ==================== Instanciação ====================
 
 
@@ -50,6 +58,7 @@ listbox.pack()
 caixa_entrada.pack()
 
 # ===== Botões =====
+botao_adicionar.pack()
 botao_enviar.pack()
 
 # ===== tela =====
