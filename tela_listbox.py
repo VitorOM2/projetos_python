@@ -10,6 +10,11 @@ def enviar():
 
 def adicionar():
     listbox.insert( listbox.size(), caixa_entrada.get() )
+    listbox.config( height = listbox.size() )
+
+def deletar():
+    listbox.delete ( listbox.curselection() )
+    listbox.config( height = listbox.size() )
 # ==================== Funções ====================
 
 
@@ -27,7 +32,7 @@ listbox = Listbox(tela,
 listbox.insert(1, 'Pizza')
 listbox.insert(2, 'Macarronada')
 listbox.insert(3, 'Pão de alho')
-listbox.insert(4, 'sopa')
+listbox.insert(4, 'Sopa')
 listbox.insert(5, 'Salada')
 
 listbox.config( height = listbox.size() )
@@ -46,6 +51,11 @@ botao_adicionar = Button (tela,
     command = adicionar
 )
 
+botao_deletar = Button (tela,
+    text    = 'Deletar',
+    command = deletar
+)
+
 # ==================== Instanciação ====================
 
 
@@ -59,6 +69,7 @@ caixa_entrada.pack()
 
 # ===== Botões =====
 botao_adicionar.pack()
+botao_deletar.pack()
 botao_enviar.pack()
 
 # ===== tela =====
