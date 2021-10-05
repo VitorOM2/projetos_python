@@ -3,6 +3,13 @@ from tkinter import *
 # ==================== Importações ====================
 
 
+# ==================== Funções ====================
+def enviar():
+    print ('Você pediu: ')
+    print (listbox.get ( listbox.curselection() ) )
+# ==================== Funções ====================
+
+
 # ==================== Instanciação ====================
 tela = Tk()
 
@@ -12,7 +19,7 @@ listbox = Listbox(tela,
     font  = ('Constantia', 35),
     width = 12,
     
-    )
+)
 
 listbox.insert(1, 'Pizza')
 listbox.insert(2, 'Macarronada')
@@ -22,6 +29,12 @@ listbox.insert(5, 'Salada')
 
 listbox.config( height = listbox.size() )
 
+# ===== Botões =====
+botao_enviar = Button (tela,
+    text    = 'Enviar',
+    command = enviar
+)
+
 # ==================== Instanciação ====================
 
 
@@ -29,6 +42,9 @@ listbox.config( height = listbox.size() )
 
 # ===== List Box =====
 listbox.pack()
+
+# ===== Botões =====
+botao_enviar.pack()
 
 # ===== tela =====
 tela.mainloop()
