@@ -29,6 +29,9 @@ listbox.insert(5, 'Salada')
 
 listbox.config( height = listbox.size() )
 
+# ===== Caixa de entrada =====
+caixa_entrada = Entry(tela)
+
 # ===== Botões =====
 botao_enviar = Button (tela,
     text    = 'Enviar',
@@ -42,6 +45,9 @@ botao_enviar = Button (tela,
 
 # ===== List Box =====
 listbox.pack()
+
+# ===== Caixa de entrada =====
+caixa_entrada.pack()
 
 # ===== Botões =====
 botao_enviar.pack()
