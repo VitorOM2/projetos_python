@@ -8,6 +8,13 @@ from tkinter import messagebox
 def clique():
     messagebox.showinfo(title = 'Isto é uma caixa de texto',
         message = 'Olá')
+
+    #messagebox.showwarning(title = 'Aviso!',   #Exemplo de caixa de texto mostrando aviso
+    #    message = 'Olá')
+
+    #messagebox.showerror(title = 'Erro!',
+    #    message = 'Olá')
+
 # ==================== Funções ====================
 
 
