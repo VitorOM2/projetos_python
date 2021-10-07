@@ -5,6 +5,10 @@ from tkinter import colorchooser #Sub módulo
 
 
 # ==================== Funções ====================
+def clicar():
+    cor     = colorchooser.askcolor()
+    cor_hex = cor[1]
+    tela.config (bg = cor_hex) 
 # ==================== Funções ====================
 
 
@@ -14,10 +18,18 @@ from tkinter import colorchooser #Sub módulo
 tela = Tk()
 tela.geometry('420x420')
 
+# ===== Botões =====
+btn_mudar_cor = Button(tela,
+    text    = 'Mudar de cor',
+    command = clicar)
+
 # ==================== Instanciação ====================
 
 
 # ==================== Mostrar ===================
+
+# ===== Botões =====
+btn_mudar_cor.pack()
 
 # ===== Tela =====
 tela.mainloop()
