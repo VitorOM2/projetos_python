@@ -6,7 +6,8 @@ from tkinter import messagebox
 
 # ==================== Funções ====================
 def clique():
-    pass
+    messagebox.showinfo(title = 'Isto é uma caixa de texto',
+        message = 'Olá')
 # ==================== Funções ====================
 
 
@@ -17,7 +18,8 @@ tela = Tk()
 
 # ===== Botões =====
 btn_caixa_de_texto = Button(tela,
-    command = clique)
+    command = clique,
+    text    = 'Clique aqui')
 
 # ==================== Instanciação ====================
 
