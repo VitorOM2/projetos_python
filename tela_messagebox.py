@@ -6,14 +6,19 @@ from tkinter import messagebox
 
 # ==================== Funções ====================
 def clique():
-    messagebox.showinfo(title = 'Isto é uma caixa de texto',
-        message = 'Olá')
+    #messagebox.showinfo(title = 'Isto é uma caixa de texto',
+    #    message = 'Olá')
 
     #messagebox.showwarning(title = 'Aviso!',   #Exemplo de caixa de texto mostrando aviso
     #    message = 'Olá')
 
     #messagebox.showerror(title = 'Erro!',
     #    message = 'Olá')
+
+    if messagebox.askokcancel(title = 'Sim ou não', message = 'Sim ou não'):
+        print ('Sim')
+    else:
+        print ('Não')
 
 # ==================== Funções ====================
 
