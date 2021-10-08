@@ -5,6 +5,9 @@ from tkinter import filedialog
 
 
 # ==================== Funções ====================
+def abrir_arquivos():
+    arquivo_path = filedialog.askopenfilename()
+    print (arquivo_path)
 # ==================== Funções ====================
 
 
@@ -25,7 +28,7 @@ btn_abrir_arquivos = Button(
 # ==================== Mostrar ====================
 
 # ===== Botões =====
-btn_abrir_arquivos.pack
+btn_abrir_arquivos.pack()
 
 # ===== Tela =====
 tela.mainloop()
