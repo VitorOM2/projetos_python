@@ -6,8 +6,10 @@ from tkinter import filedialog
 
 # ==================== Funções ====================
 def abrir_arquivos():
-    arquivo_path = filedialog.askopenfilename()
-    print (arquivo_path)
+    arquivo_path = filedialog.askopenfilename(title = 'Abrir arquivo')
+    arquivo      = open (arquivo_path, 'r')
+    print ( arquivo.read() )
+    arquivo.close()
 # ==================== Funções ====================
 
 
