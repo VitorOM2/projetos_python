@@ -36,9 +36,11 @@ def salvar_arquivo():
 tela = Tk()
 
 # ===== Menu =====
-menu_barra   = Menu(tela)
-menu_arquivo = Menu(menu_barra,
-    tearoff = 0)
+menu_barra   = Menu( tela )
+menu_arquivo = Menu( menu_barra,
+    tearoff  = 0 )
+menu_editar  = Menu( menu_barra,
+    tearoff  = 0)
 
 # ==================== Instanciação ====================
 
@@ -50,11 +52,16 @@ tela.config(menu = menu_barra)
 
 # ===== Menu =====
 menu_barra.add_cascade(label = 'Arquivo', menu = menu_arquivo)
+menu_barra.add_cascade(label = 'Editar',  menu = menu_editar)
 
 menu_arquivo.add_command(label = 'Abrir',  command = abrir_arquivo  )
 menu_arquivo.add_command(label = 'Salvar', command = salvar_arquivo )
 menu_arquivo.add_separator()
 menu_arquivo.add_command(label = 'Sair', command = quit)
+
+menu_editar.add_command(label = 'cortar', command = cortar )
+menu_editar.add_command(label = 'copiar', command = copiar )
+menu_editar.add_command(label = 'colar',  command = colar  )
 
 # ==================== Configurações ====================
 
