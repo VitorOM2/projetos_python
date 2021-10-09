@@ -46,10 +46,14 @@ tela = Tk()
 
 # ===== Menu =====
 menu_barra   = Menu( tela )
+
 menu_arquivo = Menu( menu_barra,
-    tearoff  = 0 )
+    tearoff  = 0,
+    font     = ( 'arial', 15 ) )
+    
 menu_editar  = Menu( menu_barra,
-    tearoff  = 0)
+    tearoff  = 0,
+    font     = ( 'arial', 15 ) )
 
 # ==================== Instanciação ====================
 
