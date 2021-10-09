@@ -6,7 +6,18 @@ from tkinter import filedialog
 
 # ==================== Funções ====================
 def salvar_arquivo():
-    pass
+    arquivo      = filedialog.asksaveasfile(
+        defaultextension = '.txt',
+
+        filetypes = [
+            ('arquivo de texto', '.txt'),
+            ('html', '.html'),
+            ('todos os arquivos', '.*')
+        ])
+
+    arquivo_texto = str ( caixa_texto.get(1.0, END) )
+    arquivo.write(arquivo_texto)
+    arquivo.close()
 # ==================== Funções ====================
 
 
