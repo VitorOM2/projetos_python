@@ -27,6 +27,15 @@ def salvar_arquivo():
     
     arquivo.close()
 
+def cortar():
+    pass
+
+def copiar():
+    pass
+
+def colar():
+    pass
+
 # ==================== Funções ====================
 
 
