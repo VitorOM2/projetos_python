@@ -15,6 +15,9 @@ def salvar_arquivo():
             ('todos os arquivos', '.*')
         ])
 
+    if arquivo is None:
+        return
+
     arquivo_texto = str ( caixa_texto.get(1.0, END) )
     arquivo.write(arquivo_texto)
     arquivo.close()
