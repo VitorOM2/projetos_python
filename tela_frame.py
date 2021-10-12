@@ -8,7 +8,10 @@ from tkinter import *
 # ===== Tela =====
 tela = Tk()
 
-frame = Frame(tela)
+frame = Frame(tela,
+    bg = 'blue',
+    bd = 5,
+    relief = RAISED)
 
 # ===== Botões =====
 botao_w = Button(frame,
@@ -43,7 +46,7 @@ botao_s.pack(side = LEFT)
 botao_d.pack(side = LEFT)
 
 # ===== Frame =====
-frame.pack()
+frame.place(x = 10, y = 10)
 
 # ===== Tela =====
 tela.mainloop()
