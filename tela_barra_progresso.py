@@ -7,17 +7,18 @@ import time
 
 # ==================== Funções ====================
 def baixar():
-    task = 10
-    x    = 0
+    GB         = 100
+    Download   = 0
+    velocidade = 1
 
-    while (x < task ): # Preenche a barra de progresso
+    while (Download < GB ): # Preenche a barra de progresso
 
-        time.sleep(1)
-        barra ['value'] += 10
-        x += 1
+        time.sleep(0.05)
+        barra ['value'] += (velocidade / GB ) * 100
+        Download += velocidade
 
-        porcentagem.set   ( str (int ( ( x / task ) * 100)  ) + '%' )
-        texto_tarefas.set ( str (x) + ' / ' + str (task) + ' tarefas completas' )
+        porcentagem.set   ( str (int ( ( Download / GB ) * 100)  ) + '%' )
+        texto_tarefas.set ( str (Download) + ' / ' + str (GB) + ' GB baixados' )
 
         tela.update_idletasks() # Atualiza a tela a cada alteração
 
