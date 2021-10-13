@@ -6,7 +6,15 @@ import time
 
 # ==================== Funções ====================
 def baixar():
-    pass
+    task = 10
+    x    = 0
+
+    while (x < task ): # Preenche a barra de progresso
+        time.sleep(1)
+        barra ['value'] += 10
+        x += 1
+        tela.update_idletasks() # Atualiza a tela a cada alteração
+
 # ==================== Funções ====================
 
 # ==================== Instanciação ====================
