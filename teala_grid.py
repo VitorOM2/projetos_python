@@ -14,6 +14,9 @@ tela = Tk()
 rotulo_nome = Label (tela,
     text = 'Primeiro nome: ',)
 
+# ===== Caixas de entradas =====
+caixa_nome = Entry(tela)
+
 # ==================== Instanciação ====================
 
 
@@ -21,6 +24,9 @@ rotulo_nome = Label (tela,
 
 # ===== Labels =====
 rotulo_nome.pack()
+
+# ===== Caixa de entrada =====
+caixa_nome.pack()
 
 # ===== Tela =====
 tela.mainloop()
