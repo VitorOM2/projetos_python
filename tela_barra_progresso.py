@@ -17,9 +17,15 @@ tela = Tk()
 # ===== Botões =====
 btn_download = Button (tela, text = 'Download', command = baixar)
 
+# ===== Barra de progresso =====
+barra = Progressbar (tela, orient = HORIZONTAL, length = 200)
+
 # ==================== Instanciação ====================
 
 # ==================== Mostrar ====================
+
+# ===== Barra de progresso =====
+barra.pack( pady = 10 )
 
 # ===== Botões =====
 btn_download.pack()
