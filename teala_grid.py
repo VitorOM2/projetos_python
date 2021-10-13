@@ -8,7 +8,7 @@ from tkinter import *
 # ===== Tela =====
 tela = Tk()
 
-# ===== Grid ===== Grid() = gerenciador geométrico que organiza widgets em uma forma de tabela
+# Grid() = gerenciador geométrico que organiza widgets em uma forma de tabela
 
 # ===== Labels =====
 rotulo_nome = Label (tela,
@@ -23,10 +23,10 @@ caixa_nome = Entry(tela)
 # ==================== Mostrar ====================
 
 # ===== Labels =====
-rotulo_nome.pack()
+rotulo_nome.grid(row = 0, column = 0)
 
 # ===== Caixa de entrada =====
-caixa_nome.pack()
+caixa_nome.grid(row = 0, column = 1)
 
 # ===== Tela =====
 tela.mainloop()
