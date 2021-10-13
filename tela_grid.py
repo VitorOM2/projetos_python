@@ -12,7 +12,8 @@ tela = Tk()
 
 # ===== Labels =====
 rotulo_nome      = Label (tela,
-    text = 'Primeiro nome: ')
+    text  = 'Primeiro nome: ',
+    width = 20)
 
 rotulo_sobrenome = Label (tela,
     text = 'Sobrenome: ')
@@ -24,6 +25,9 @@ rotulo_email = Label (tela,
 caixa_nome      = Entry(tela)
 caixa_sobrenome = Entry(tela)
 caixa_email     = Entry(tela)
+
+# ===== Botões =====
+btn_enviar = Button(tela, text = 'Enviar')
 
 # ==================== Instanciação ====================
 
@@ -39,6 +43,9 @@ rotulo_email.grid     (row = 2, column = 0)
 caixa_nome.grid      (row = 0, column = 1)
 caixa_sobrenome.grid (row = 1, column = 1)
 caixa_email.grid     (row = 2, column = 1)
+
+# ===== Botões =====
+btn_enviar.grid      (row = 3, column = 0, columnspan = 2)
 
 # ===== Tela =====
 tela.mainloop()
