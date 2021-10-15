@@ -14,8 +14,12 @@ canvas = Canvas ( tela, height = 500, width = 500 )
 
 #canvas.create_rectangle ( 50, 50, 250, 250, fill = 'purple') # Cria um retêngulo/quadrado
 
-pontos = [250, 0, 500, 500, 0, 500]
-canvas.create_polygon   (pontos, fill = 'orange', outline = 'black', width = 5) # Cria um poligono
+#pontos = [250, 0, 500, 500, 0, 500]
+#canvas.create_polygon   (pontos, fill = 'orange', outline = 'black', width = 5) # Cria um poligono
+
+canvas.create_arc (0, 0, 500, 500, fill = 'green', start = 360) 
+# Cria um arco (as coordenadas define o tamanho)
+# Start = é em graus
 
 # ==================== Mostrar ====================
 
