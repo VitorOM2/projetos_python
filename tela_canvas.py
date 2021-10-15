@@ -17,10 +17,14 @@ canvas = Canvas ( tela, height = 500, width = 500 )
 #pontos = [250, 0, 500, 500, 0, 500]
 #canvas.create_polygon   (pontos, fill = 'orange', outline = 'black', width = 5) # Cria um poligono
 
-canvas.create_arc (0, 0, 500, 500, fill = 'green', start = 360) 
+#canvas.create_arc (0, 0, 500, 500, fill = 'green', start = 360) 
 # Cria um arco (as coordenadas define o tamanho)
 # Start = é em graus
 
+canvas.create_arc (0, 0, 500, 500, fill = 'red',   extent = 180, width = 10 )
+canvas.create_arc (0, 0, 500, 500, fill = 'white', extent = 180, start = 180, width = 10 )
+
+canvas.create_oval (190, 190, 310, 310, fill = 'white', width = 10)
 # ==================== Mostrar ====================
 
 # ===== Canvas =====
