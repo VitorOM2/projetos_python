@@ -7,6 +7,12 @@ from tkinter import *
 def arrastar_inicio(evento):
     rotulo1.inicio_X = evento.x
     rotulo1.inicio_Y = evento.y
+
+def arrastar_movimento(evento): # Pega as novas coordenadas do label
+    x = rotulo1.winfo_x() - rotulo1.inicio_X + evento.x
+    y = rotulo1.winfo_y() - rotulo1.inicio_Y + evento.y
+    rotulo1.place (x = x, y = y) # Atualiza a posição do label
+
 # ==================== Funções ====================
 
 
@@ -25,7 +31,9 @@ rotulo1 = Label (tela, bg = 'blue', height = 5, width = 10)
 # ==================== Configurações ====================
 
 # ===== Labels =====
-rotulo1.bind ( ' <Button-1> ', arrastar_inicio )
+rotulo1.bind ( ' <Button-1> ', arrastar_inicio    )
+rotulo1.bind ( ' <B1-Motion> ', arrastar_movimento)
+
 # ==================== Configurações ====================
 
 
