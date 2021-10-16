@@ -5,13 +5,15 @@ from tkinter import *
 
 # ==================== Funções ====================
 def arrastar_inicio(evento):
-    rotulo1.inicio_X = evento.x
-    rotulo1.inicio_Y = evento.y
+    widget = evento.widget
+    widget.inicio_X = evento.x
+    widget.inicio_Y = evento.y
 
 def arrastar_movimento(evento): # Pega as novas coordenadas do label
-    x = rotulo1.winfo_x() - rotulo1.inicio_X + evento.x
-    y = rotulo1.winfo_y() - rotulo1.inicio_Y + evento.y
-    rotulo1.place (x = x, y = y) # Atualiza a posição do label
+    widget = evento.widget
+    x = widget.winfo_x() - widget.inicio_X + evento.x
+    y = widget.winfo_y() - widget.inicio_Y + evento.y
+    widget.place (x = x, y = y) # Atualiza a posição do label
 
 # ==================== Funções ====================
 
