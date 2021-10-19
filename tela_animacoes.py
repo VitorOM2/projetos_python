@@ -20,6 +20,10 @@ tela = Tk()
 # ===== Canvas =====
 canvas = Canvas (tela, width = DIAMETRO, height = TAMANHO)
 
+# ===== Imagem =====
+foto_imagem        = PhotoImage ( file = 'alien.png' )
+foto_imagem_canvas = canvas.create_image (0, 0, image = foto_imagem, anchor = NW)
+
 # ==================== Instanciação dos widgets ====================
 
 
