@@ -31,11 +31,19 @@ foto_imagem_canvas = canvas.create_image (0, 0, image = foto_imagem, anchor = NW
 # ==================== Instanciação dos widgets ====================
 
 
+foto_imagem_diametro = foto_imagem.width()
+foto_imagem_tamanho  = foto_imagem.height()
 # ==================== Loop ====================
 while True:          # Loop para atualizar a tela durante animação
     coordenadas = canvas.coords ( foto_imagem_canvas )      # Pega as coordenadas da imagem
     print (coordenadas)
-    canvas.move (foto_imagem_canvas, velocidade_x, 0)
+
+    if (coordenadas[0] >= ( DIAMETRO - foto_imagem_diametro ) or coordenadas[0] < 0 ): # Inverte o movimento da imagem se chegar na borda do canvas
+        velocidade_x = -velocidade_x
+    if (coordenadas[1] >= ( DIAMETRO - foto_imagem_diametro ) or coordenadas[1] < 0 ): # Inverte o movimento da imagem se chegar na borda do canvas
+        velocidade_y = -velocidade_y
+
+    canvas.move ( foto_imagem_canvas, velocidade_x, velocidade_y )
     tela.update ()                                          # Atualiza a tela
     time.sleep  (0.01)                                      # Pausa o loop por determinado tempo 
 # ==================== Loop ====================
