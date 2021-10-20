@@ -10,8 +10,8 @@ tela = Tk()
 
 
 # ==================== Constantes e Variáveis ====================
-DIAMETRO = 500
-TAMANHO  = 500
+LARGURA = 500
+TAMANHO = 500
 
 velocidade_x = 3 # Variável para controlar a velocidade que a animação vai se mover no eixo X
 velocidade_y = 2  # Variável para controlar a velocidade que a animação vai se mover no eixo Y
@@ -21,7 +21,7 @@ velocidade_y = 2  # Variável para controlar a velocidade que a animação vai s
 # ==================== Instanciação dos widgets ====================
 
 # ===== Canvas =====
-canvas = Canvas (tela, width = DIAMETRO, height = TAMANHO)
+canvas = Canvas (tela, width = LARGURA, height = TAMANHO)
 canvas.pack()
 
 # ===== Imagem =====
@@ -38,9 +38,9 @@ while True:          # Loop para atualizar a tela durante animação
     coordenadas = canvas.coords ( foto_imagem_canvas )      # Pega as coordenadas da imagem
     print (coordenadas)
 
-    if (coordenadas[0] >= ( DIAMETRO - foto_imagem_diametro ) or coordenadas[0] < 0 ): # Inverte o movimento da imagem se chegar na borda do canvas
+    if (coordenadas[0] >= ( LARGURA - foto_imagem_diametro ) or coordenadas[0] < 0 ): # Inverte o movimento da imagem se chegar na borda do canvas
         velocidade_x = -velocidade_x
-    if (coordenadas[1] >= ( DIAMETRO - foto_imagem_diametro ) or coordenadas[1] < 0 ): # Inverte o movimento da imagem se chegar na borda do canvas
+    if (coordenadas[1] >= ( LARGURA - foto_imagem_diametro ) or coordenadas[1] < 0 ): # Inverte o movimento da imagem se chegar na borda do canvas
         velocidade_y = -velocidade_y
 
     canvas.move ( foto_imagem_canvas, velocidade_x, velocidade_y )  #Movimenta a imagem
