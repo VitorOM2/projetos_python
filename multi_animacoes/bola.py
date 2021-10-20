@@ -1,4 +1,4 @@
-class MyClass:
+class Bola:
 
   def __init__ (self, canvas, x, y, diametro, velocidade_x, velocidade_y, cor):
     self.canvas = canvas
