@@ -19,12 +19,15 @@ canvas = Canvas (tela, width = LARGURA, height = ALTURA)
 canvas.pack()
 
 # ===== Bolas (Objetos) =====
-bola_volei = Bola(canvas, 0, 0, 100, 1, 1, 'white')
-
+bola_volei    = Bola (canvas, 0, 0, 80, 1, 1, 'white'  )
+bola_tenis    = Bola (canvas, 0, 0, 25 , 5, 3, 'yellow' )
+bola_basquete = Bola (canvas, 0, 0, 100, 1, 3, 'red' )
 
 # ==================== Loop ====================
 while True: # Loop que cria a animação e atualiza a tela
     bola_volei.mover()
+    bola_tenis.mover()
+    bola_basquete.mover()
     tela.update()
     time.sleep(0.01)
 
