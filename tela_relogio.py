@@ -15,7 +15,7 @@ def update():
     string_dia = strftime ( '%A' )
     rotulo_dia.config ( text = string_dia )
 
-    rotulo_tempo.after (1000, update) # Atualiza a tela com o horário
+    tela.after (1000, update) # Atualiza a tela com o horário
 
 # ==================== Instanciação dos widgets e objetos ====================
 
