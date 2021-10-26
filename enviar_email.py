@@ -3,8 +3,8 @@ import smtplib
 
 
 # ==================== Variáveis ====================
-remetente    = "viktormarque2053@gmail.com"
-destinatario = "viktormarque2053@gmail.com"
+remetente    = "email@gmail.com"
+destinatario = "email@gmail.com"
 senha        = ""
 assunto      = "Python - teste de E-mail"
 corpo        = "Eu escrevi um email"
@@ -30,6 +30,7 @@ print ( 'Logado' )
 try:
     server.sendmail (remetente, destinatario, mensagem)
     print ('Email enviado')
+
 except smtplib.SMTPAuthenticationError:
     print('Erro ao se conectar')
 
