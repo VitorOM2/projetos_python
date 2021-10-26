@@ -16,3 +16,16 @@ Para: {destinatario}
 Assunto: {assunto} \n
 {corpo}
 """
+
+
+# ==================== Conexão ====================
+server = smtplib.SMTP ( "smtp.gmail.com", 587 )
+server.starttls()
+
+server.login ( remetente, senha )
+print ( 'Logado' )
+
+
+# ==================== Enviar email ====================
+server.sendmail (remetente, destinatario, mensagem)
+print ('Email enviado')
