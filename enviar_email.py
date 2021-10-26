@@ -19,7 +19,7 @@ Assunto: {assunto} \n
 
 
 # ==================== Conexão ====================
-server = smtplib.SMTP ( "smtp.gmail.com", 587 )
+server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()
 
 server.login ( remetente, senha )
@@ -27,5 +27,9 @@ print ( 'Logado' )
 
 
 # ==================== Enviar email ====================
-server.sendmail (remetente, destinatario, mensagem)
-print ('Email enviado')
+try:
+    server.sendmail (remetente, destinatario, mensagem)
+    print ('Email enviado')
+except smtplib.SMTPAuthenticationError:
+    print('Erro ao se conectar')
+
