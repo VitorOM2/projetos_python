@@ -11,8 +11,15 @@ def pressionar_teclas( num ):
     texto_equacao = texto_equacao + str ( num )
     rotulo_equacao.set ( texto_equacao )
 
-def resultado():
-    pass
+def operacoes():
+    
+    # Calcula o resultado
+    global texto_equacao
+
+    total = str (   eval (  texto_equacao  )   ) # O Eval() calcula o resultado
+    rotulo_equacao.set   (    total    )
+
+    texto_equacao = total
 
 def limpar():
     pass
@@ -82,7 +89,7 @@ btn_mult.grid ( row = 2, column = 3 )
 btn_divi = Button ( frame, text = '/', height = 4, width = 10, font = 35, command = lambda: pressionar_teclas ('/') )
 btn_divi.grid ( row = 3, column = 3 )
 
-btn_resu = Button ( frame, text = '=', height = 4, width = 10, font = 35, command = resultado )
+btn_resu = Button ( frame, text = '=', height = 4, width = 10, font = 35, command = operacoes )
 btn_resu.grid ( row = 3, column = 2 )
 
 btn_deci = Button ( frame, text = '.', height = 4, width = 10, font = 35, command = lambda: pressionar_teclas ('.') )
