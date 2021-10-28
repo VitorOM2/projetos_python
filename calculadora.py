@@ -30,6 +30,10 @@ rotulo_exibicao = Label( # Rotulo para exibir as equações e resultados
     tela, textvariable = rotulo_equacao, font = ('consolas', 20), bg = "white", width = 20, height = 2 )
 rotulo_exibicao.pack()
 
+# ===== Frame =====
+frame = Frame ( tela )
+frame.pack()
+
 
 # ==================== Criar a tela ====================
 tela.mainloop()
