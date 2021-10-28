@@ -36,7 +36,13 @@ def operacoes():
     
 
 def limpar():
-    pass
+    
+    # Limpa a tela
+    global texto_equacao
+
+    rotulo_equacao.set ("")
+
+    texto_equacao = ""
 
 
 # ==================== Instanciação da Tela ====================
