@@ -24,7 +24,15 @@ def operacoes():
 
     except ZeroDivisionError:
 
-        rotulo_equacao.set (    "Erro: Impossível dividir por zero"    )    
+        rotulo_equacao.set (    "Erro: Impossível dividir por zero"    )
+
+        texto_equacao = ""
+
+    except SyntaxError:
+
+        rotulo_equacao.set (    "Erro: erro de sintaxe"    )
+
+        texto_equacao = ""    
     
 
 def limpar():
