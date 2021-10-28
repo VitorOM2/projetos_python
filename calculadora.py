@@ -2,6 +2,17 @@
 from tkinter import *
 
 
+# ==================== Funções ====================
+def pressionar_teclas(num):
+    pass
+
+def resultado():
+    pass
+
+def limpar():
+    pass
+
+
 # ==================== Instanciação da Tela ====================
 tela = Tk()
 tela.geometry ( "500x500"   ) # Tamanho da tela
