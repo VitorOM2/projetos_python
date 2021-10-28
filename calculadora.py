@@ -13,13 +13,19 @@ def pressionar_teclas( num ):
 
 def operacoes():
     
-    # Calcula o resultado
-    global texto_equacao
+    try:
+        # Calcula o resultado
+        global texto_equacao
 
-    total = str (   eval (  texto_equacao  )   ) # O Eval() calcula o resultado
-    rotulo_equacao.set   (    total    )
+        total = str (   eval (  texto_equacao  )   ) # O Eval() calcula o resultado
+        rotulo_equacao.set   (    total    )
 
-    texto_equacao = total
+        texto_equacao = total
+
+    except ZeroDivisionError:
+
+        rotulo_equacao.set (    "Erro: Impossível dividir por zero"    )    
+    
 
 def limpar():
     pass
@@ -39,7 +45,7 @@ rotulo_equacao = StringVar()
 # ==================== Instanciação dos widgets ====================
 # ===== Labels =====
 rotulo_exibicao = Label( # Rotulo para exibir as equações e resultados
-    tela, textvariable = rotulo_equacao, font = ('consolas', 20), bg = "white", width = 20, height = 2 )
+    tela, textvariable = rotulo_equacao, font = ('consolas', 20), bg = "white", width = 40, height = 2 )
 rotulo_exibicao.pack()
 
 # ===== Frame =====
