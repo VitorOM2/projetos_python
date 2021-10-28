@@ -3,8 +3,13 @@ from tkinter import *
 
 
 # ==================== Funções ====================
-def pressionar_teclas(num):
-    pass
+def pressionar_teclas( num ):
+
+    # Mostra as teclas pressionadas na tela
+    global texto_equacao
+
+    texto_equacao = texto_equacao + str ( num )
+    rotulo_equacao.set ( texto_equacao )
 
 def resultado():
     pass
