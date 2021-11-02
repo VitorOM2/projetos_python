@@ -33,3 +33,11 @@ def sobre():
 
 def sair():
     pass
+
+
+# ==================== Instanciação da Tela ====================
+tela = Tk()
+
+
+# ==================== Cria Tela ====================
+tela.mainloop()
