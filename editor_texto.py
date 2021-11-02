@@ -53,5 +53,17 @@ y = int ( ( altura_tela  / 2 ) - ( altura_janela  / 2 ) )
 tela.geometry( "{}x{}+{}+{}" .format( largura_janela, altura_janela, x, y ) )
 
 
+# ===== Configura a Fonte =====
+fonte_nome = StringVar( tela )
+fonte_nome.set ( 'Arial' )
+
+fonte_tamanho = StringVar( tela )
+fonte_tamanho.set ( '25' )
+
+
+# ==================== Instanciação dos widgets ====================
+# ===== Área de texto =====
+area_texto = Text ( tela, font = (fonte_nome.get(), fonte_tamanho.get() ) )
+
 # ==================== Cria Tela ====================
 tela.mainloop()
