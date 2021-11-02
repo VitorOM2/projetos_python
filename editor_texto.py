@@ -37,6 +37,7 @@ def sair():
 
 # ==================== Instanciação da Tela ====================
 tela = Tk()
+tela.title('Editor-V')
 
 
 # ==================== Cria Tela ====================
