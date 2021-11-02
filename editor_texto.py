@@ -65,5 +65,8 @@ fonte_tamanho.set ( '25' )
 # ===== Área de texto =====
 area_texto = Text ( tela, font = (fonte_nome.get(), fonte_tamanho.get() ) )
 
+# ===== Barra de rolagem =====
+barra_rolagem = Scrollbar ( area_texto )
+
 # ==================== Cria Tela ====================
 tela.mainloop()
