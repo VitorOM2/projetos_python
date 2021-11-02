@@ -38,6 +38,19 @@ def sair():
 # ==================== Instanciação da Tela ====================
 tela = Tk()
 tela.title('Editor-V')
+file = None
+
+# ===== Configura o tamanho da tela =====
+largura_janela = 500
+largura_tela   = tela.winfo_screenwidth()
+
+altura_janela  = 500
+altura_tela    = tela.winfo_screenheight()
+
+x = int ( ( largura_tela / 2 ) - ( largura_janela / 2 ) )
+y = int ( ( altura_tela  / 2 ) - ( altura_janela  / 2 ) )
+
+tela.geometry( "{}x{}+{}+{}" .format( largura_janela, altura_janela, x, y ) )
 
 
 # ==================== Cria Tela ====================
