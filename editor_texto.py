@@ -65,8 +65,15 @@ fonte_tamanho.set ( '25' )
 # ===== Área de texto =====
 area_texto = Text ( tela, font = (fonte_nome.get(), fonte_tamanho.get() ) )
 
+# ===== Grid =====
+tela.grid_rowconfigure    (0, weight = 1 ) # Permite a textbox expandir
+tela.grid_columnconfigure (0, weight = 1 ) # Permite a textbox expandir
+area_texto.grid( sticky = N + E + S + W )
+
 # ===== Barra de rolagem =====
 barra_rolagem = Scrollbar ( area_texto )
+barra_rolagem.pack ( side = RIGHT, fill = Y )             # A barra vai ficar na direita e preencher o eixo y
+area_texto.config  ( yscrollcommand = barra_rolagem.set ) # Adiciona a barra de rolagem no textbox
 
 # ==================== Cria Tela ====================
 tela.mainloop()
