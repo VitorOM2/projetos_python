@@ -17,6 +17,9 @@ def mudar_fonte(*args):
 def novo_arquivo():
     pass
 
+def abrir_arquivo():
+    pass
+
 def salvar_arquivo():
     pass
 
@@ -91,6 +94,29 @@ caixa_fonte.grid( row = 0, column = 1 )
 # ===== SpinBox =====
 caixa_tamanho = Spinbox ( frame, from_=1, to=100, textvariable = fonte_tamanho, command = mudar_fonte )
 caixa_tamanho.grid(row=0, column=2)
+
+# ===== Barra de Menu =====
+menu_barra = Menu( tela )
+tela.config( menu = menu_barra )
+# -----Arquivo-----
+menu_arquivo = Menu ( menu_barra, tearoff = 0 )
+menu_barra.add_cascade   ( label = "Arquivo", menu   = menu_arquivo   )
+menu_arquivo.add_command ( label = "Novo",   command = novo_arquivo   )
+menu_arquivo.add_command ( label = "Abrir",  command = abrir_arquivo  )
+menu_arquivo.add_command ( label = "Salvar", command = salvar_arquivo )
+menu_arquivo.add_separator()
+menu_arquivo.add_command ( label = "Sair",   command = quit           )
+# -----Editar-----
+menu_editar = Menu ( menu_barra, tearoff = 0 )
+menu_barra. add_cascade  ( label = "Editar", menu     = menu_editar   )
+menu_editar.add_command  ( label = "Cortar", command  = cortar        )
+menu_editar.add_command  ( label = "Copiar", command  = copiar        )
+menu_editar.add_command  ( label = "Colar",  command  = colar         )
+#-----Ajuda-----
+menu_ajuda = Menu ( menu_barra, tearoff = 0 )
+menu_barra.add_cascade   ( label = "Help",   menu    = menu_ajuda     )
+menu_ajuda.add_command   (label  = "About",  command = sobre          )
+
 
 
 # ==================== Cria Tela ====================
