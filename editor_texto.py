@@ -12,7 +12,7 @@ def mudar_cor():
     area_texto.config(fg=cor[1])
 
 def mudar_fonte(*args):
-    pass
+    area_texto.config( font = ( fonte_nome.get(), caixa_tamanho.get() ) )
 
 def novo_arquivo():
     pass
@@ -83,6 +83,14 @@ frame.grid()
 # ===== Botões =====
 btn_mudar_cor = Button ( frame, text = "Cor", command = mudar_cor)
 btn_mudar_cor.grid     ( row = 0, column = 0 )
+
+# ===== OptionMenu =====
+caixa_fonte = OptionMenu( frame, fonte_nome, *font.families(), command = mudar_fonte )
+caixa_fonte.grid( row = 0, column = 1 )
+
+# ===== SpinBox =====
+caixa_tamanho = Spinbox ( frame, from_=1, to=100, textvariable = fonte_tamanho, command = mudar_fonte )
+caixa_tamanho.grid(row=0, column=2)
 
 
 # ==================== Cria Tela ====================
