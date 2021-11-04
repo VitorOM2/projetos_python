@@ -15,28 +15,58 @@ def mudar_fonte(*args):
     area_texto.config( font = ( fonte_nome.get(), caixa_tamanho.get() ) )
 
 def novo_arquivo():
-    pass
+    tela.title ("Sem título")
+    area_texto.delete (1.0, END)
 
 def abrir_arquivo():
-    pass
+    arquivo = askopenfilename(defaultextension=".txt",
+        filetypes=[("Todos arquivos", "*.*"),("Arquivos de texto", "*.txt")])
+
+    if arquivo is None:
+        return
+    else:
+        try:
+            tela.title(os.path.basename(arquivo))
+            area_texto.delete(1.0, END)
+            arquivo = open(arquivo, "r")
+            area_texto.insert(1.0, arquivo.read())
+        except Exception:
+            print("Algo deu errado")
+        finally:
+            arquivo.close()
 
 def salvar_arquivo():
-    pass
+    arquivo = filedialog.asksaveasfilename ( initialfile='Sem Título',
+                                             defaultextension=".txt",
+                                             filetypes=[("Todos arquivos", "*.*"     ),
+                                                        ("Arquivos de texto", "*.txt")])
+    
+    if arquivo is None:
+        return
+    else:
+        try:
+            tela.title ( os.path.basename( arquivo ) )
+            file = open( arquivo, "w")
+            file.write( area_texto.get(1.0, END))
+        except Exception:
+            print("Não deu para salvar arquivo")
+        finally:
+            arquivo.close()
 
 def cortar():
-    pass
+    area_texto.event_generate ("<<Cut>>")
 
 def copiar():
-    pass
+    area_texto.event_generate ("<<Copy>>")
 
 def colar():
-    pass
+    area_texto.event_generate ("<<Paste>>")
 
 def sobre():
-    pass
+    showinfo ("Sobre o programa: uma progrma simple que funciona como um editor de texto")
 
 def sair():
-    pass
+    tela.destroy ()
 
 
 # ==================== Instanciação da Tela ====================
@@ -88,10 +118,12 @@ btn_mudar_cor = Button ( frame, text = "Cor", command = mudar_cor)
 btn_mudar_cor.grid     ( row = 0, column = 0 )
 
 # ===== OptionMenu =====
+#Importa outras fontes para poder alterar entre elas
 caixa_fonte = OptionMenu( frame, fonte_nome, *font.families(), command = mudar_fonte )
 caixa_fonte.grid( row = 0, column = 1 )
 
 # ===== SpinBox =====
+#Cria uma caixa que permite altera o tamanho da fonte
 caixa_tamanho = Spinbox ( frame, from_=1, to=100, textvariable = fonte_tamanho, command = mudar_fonte )
 caixa_tamanho.grid(row=0, column=2)
 
@@ -105,7 +137,7 @@ menu_arquivo.add_command ( label = "Novo",   command = novo_arquivo   )
 menu_arquivo.add_command ( label = "Abrir",  command = abrir_arquivo  )
 menu_arquivo.add_command ( label = "Salvar", command = salvar_arquivo )
 menu_arquivo.add_separator()
-menu_arquivo.add_command ( label = "Sair",   command = quit           )
+menu_arquivo.add_command ( label = "Sair",   command = sair           )
 # -----Editar-----
 menu_editar = Menu ( menu_barra, tearoff = 0 )
 menu_barra. add_cascade  ( label = "Editar", menu     = menu_editar   )
@@ -114,8 +146,8 @@ menu_editar.add_command  ( label = "Copiar", command  = copiar        )
 menu_editar.add_command  ( label = "Colar",  command  = colar         )
 #-----Ajuda-----
 menu_ajuda = Menu ( menu_barra, tearoff = 0 )
-menu_barra.add_cascade   ( label = "Help",   menu    = menu_ajuda     )
-menu_ajuda.add_command   (label  = "About",  command = sobre          )
+menu_barra.add_cascade   ( label = "Ajuda",  menu    = menu_ajuda     )
+menu_ajuda.add_command   ( label = "Sobre",  command  = sobre          )
 
 
 
