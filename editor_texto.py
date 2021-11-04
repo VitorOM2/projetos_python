@@ -8,7 +8,8 @@ from tkinter.filedialog import *
 
 # ==================== Funções ====================
 def mudar_cor():
-    pass
+    cor = colorchooser.askcolor(title="Escolha uma cor")
+    area_texto.config(fg=cor[1])
 
 def mudar_fonte(*args):
     pass
@@ -74,6 +75,15 @@ area_texto.grid( sticky = N + E + S + W )
 barra_rolagem = Scrollbar ( area_texto )
 barra_rolagem.pack ( side = RIGHT, fill = Y )             # A barra vai ficar na direita e preencher o eixo y
 area_texto.config  ( yscrollcommand = barra_rolagem.set ) # Adiciona a barra de rolagem no textbox
+
+# ===== Frame =====
+frame = Frame( tela )
+frame.grid()
+
+# ===== Botões =====
+btn_mudar_cor = Button ( frame, text = "Cor", command = mudar_cor)
+btn_mudar_cor.grid     ( row = 0, column = 0 )
+
 
 # ==================== Cria Tela ====================
 tela.mainloop()
