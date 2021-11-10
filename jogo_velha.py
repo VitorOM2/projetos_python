@@ -34,20 +34,52 @@ def prox_turno(row, column):
 
         elif checar_vit() is True:
             label.config ( text = jogadores[1] + "Venceu!!!" )
-            
+
         elif checar_vit() == "Empate":
             label.config ( text = "Empate" )        
 
-
 def checar_vit():
-    pass
+
+    for row in range(3):
+        if  botoes[row][0]['text'] == botoes[row][1]['text'] == botoes[row][2]['text'] != "":
+            botoes[row][0].config ( bg = "green" )
+            botoes[row][1].config ( bg = "green" )
+            botoes[row][2].config ( bg = "green" )
+            return True
+
+    for row in range(3):
+        if  botoes[row][0]['text'] == botoes[row][1]['text'] == botoes[row][2]['text'] != "":
+            botoes[row][0].config ( bg ="green" )
+            botoes[row][1].config ( bg ="green" )
+            botoes[row][2].config ( bg ="green" )
+            return True
+
+    if  botoes[0][0]['text'] == botoes[1][1]['text'] == botoes[2][2]['text'] != "":
+        botoes[0][0].config ( bg = "green" )
+        botoes[1][1].config ( bg = "green" )
+        botoes[2][2].config ( bg = "green" )
+        return True
+
+    elif botoes[0][2]['text'] == botoes[1][1]['text'] == botoes[2][0]['text'] != "":
+         botoes[0][2].config( bg = "green" )
+         botoes[1][1].config( bg = "green" )
+         botoes[2][0].config( bg = "green" )
+         return True
+
+    elif espaco_vazio() is False:
+        for row in range(3):
+            for column in range(3):
+                botoes[row][column].config( bg = "yellow" )
+        return "Empate"
+    else:
+        return False
+
 
 def espaco_vazio():
     pass
 
 def novo_jogo():
     pass
-
 
 
 # ==================== Instanciação da Tela ====================
