@@ -20,23 +20,23 @@ def prox_turno(row, column):
                 label.config ( text = " Turno do " + jogadores[0] )
 
             elif checar_vit() is True:
-                label.config ( text = jogadores[0] + "Venceu!!!" )
+                label.config ( text = jogadores[0] + " Venceu!!!" )
 
             elif checar_vit() == "Empate":
                 label.config ( text = "Empate" )
     
-    else:
-        botoes[row][column]["text"] = jogador # Coloca o simbolo do jogador no botão
+        else:
+            botoes[row][column]["text"] = jogador # Coloca o simbolo do jogador no botão
 
-        if checar_vit() is False:
-            jogador = jogadores[0]
-            label.config ( text = " Turno do " + jogadores[0] )
+            if checar_vit() is False:
+                jogador = jogadores[0]
+                label.config ( text = " Turno do " + jogadores[0] )
 
-        elif checar_vit() is True:
-            label.config ( text = jogadores[1] + "Venceu!!!" )
+            elif checar_vit() is True:
+                label.config ( text = jogadores[1] + " Venceu!!!" )
 
-        elif checar_vit() == "Empate":
-            label.config ( text = "Empate" )        
+            elif checar_vit() == "Empate":
+                label.config ( text = "Empate" )        
 
 def checar_vit():
 
