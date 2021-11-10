@@ -86,9 +86,6 @@ def espaco_vazio():
     else:
         return True
 
-def novo_jogo():
-    pass
-
 
 # ==================== Instanciação da Tela ====================
 tela = Tk()
@@ -98,10 +95,9 @@ tela.title ( "Jogo da Velha" )
 # ==================== Variáveis e Constantes ====================
 jogadores = [ "x", "o" ]
 jogador = random.choice ( jogadores )
-botoes = [  [0, 0, 0],
-            [0, 0, 0],
-            [0, 0, 0] ]
-
+botoes = [[0,0,0],
+        [0,0,0],
+        [0,0,0]]
 
 # ==================== Instanciação dos widgets ====================
 # ===== Labels =====
@@ -112,17 +108,12 @@ label.pack    ( side = "top" )
 frame = Frame ( tela )
 frame.pack()
 
-# ===== Botões =====
-btn_resetar = Button ( text = "Resetar", font = ( 'consolas', 20 ), command = novo_jogo() )
-btn_resetar.pack     ( side = "top" )
-
 # Cria os botões para formar o tabuleiro
-for row in range (3):
-    for column in range (3):
-        botoes[row][column] = Button ( frame, text = "", font = ( 'consolas', 40 ), height = 2, width = 5,
-                                    command = lambda row = row, column = column: prox_turno(row, column) )
-
-        botoes[row][column].grid (row = row, column = column)
+for row in range(3):
+    for column in range(3):
+        botoes[row][column] = Button(frame, text="",font=('consolas',40), width=5, height=2,
+                                      command= lambda row=row, column=column: prox_turno(row,column))
+        botoes[row][column].grid(row=row,column=column)
 
 
 # ==================== Cria Tela ====================
