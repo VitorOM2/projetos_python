@@ -4,8 +4,40 @@ import random
 
 
 # ==================== Funções ====================
-def prox_turno():
-    pass
+def prox_turno(row, column):
+    
+    global jogador
+
+    # Verifica se o lugar escolhido esta vazio
+    if botoes [row][column]["text"] == "" and checar_vit() is False:
+
+        if jogador == jogadores[0]:
+
+            botoes[row][column]["text"] = jogador # Coloca o simbolo do jogador no botão
+
+            if checar_vit() is False: # Verifica se não houve vitória após movimento
+                jogador = jogadores[1] # Troca de jogador
+                label.config ( text = " Turno do " + jogadores[0] )
+
+            elif checar_vit() is True:
+                label.config ( text = jogadores[0] + "Venceu!!!" )
+
+            elif checar_vit() == "Empate":
+                label.config ( text = "Empate" )
+    
+    else:
+        botoes[row][column]["text"] = jogador # Coloca o simbolo do jogador no botão
+
+        if checar_vit() is False:
+            jogador = jogadores[0]
+            label.config ( text = " Turno do " + jogadores[0] )
+
+        elif checar_vit() is True:
+            label.config ( text = jogadores[1] + "Venceu!!!" )
+            
+        elif checar_vit() == "Empate":
+            label.config ( text = "Empate" )        
+
 
 def checar_vit():
     pass
