@@ -74,9 +74,17 @@ def checar_vit():
     else:
         return False
 
-
 def espaco_vazio():
-    pass
+    espacos = 9
+    for row in range(3):
+        for column in range(3):
+            if botoes[row][column]['text'] != "":
+                espacos -= 1
+
+    if espacos == 0:
+        return False
+    else:
+        return True
 
 def novo_jogo():
     pass
