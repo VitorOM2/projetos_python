@@ -86,6 +86,21 @@ def espaco_vazio():
     else:
         return True
 
+def novo_jogo():
+
+    global jogador
+
+    jogador = random.choice(jogadores)
+
+    label.config( text = "turno do " + jogador )
+
+
+
+    for row in range(3):
+
+        for column in range(3):
+
+            botoes[row][column].config(text = "", bg = "#F0F0F0")
 
 # ==================== Instanciação da Tela ====================
 tela = Tk()
@@ -103,6 +118,10 @@ botoes = [[0,0,0],
 # ===== Labels =====
 label = Label ( text = "Turno do " + jogador, font = ( 'consolas', 40 ) )
 label.pack    ( side = "top" )
+
+# ===== Botões =====
+btn_resetar = Button( text = "resetar", font = ('consolas',20), command = novo_jogo)
+btn_resetar.pack (side = "top" )
 
 # ===== Frames =====
 frame = Frame ( tela )
